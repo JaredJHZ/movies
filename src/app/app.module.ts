@@ -3,16 +3,27 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-
-
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import  {RouterModule} from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import {JsonpModule} from '@angular/http';
+import {MoviesService} from './services/movies.service';
+//routes
+import {AppRoutingModule} from './app.routing';
+import { KeyPipe } from './pipes/key.pipe';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    KeyPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    JsonpModule
   ],
-  providers: [],
+  providers: [MoviesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
