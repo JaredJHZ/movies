@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    padding: 0;
+    margin-bottom: 5%;
+    background: #7DC2AD;
+}
+.center{
+    text-align: center;
+}
+
+.main{
+    margin: 0;
+}
+
+.no-decor{
+    text-decoration: none;
+    color: white;
+}
+
+.no-decor:hover{
+    text-decoration: none;
+
+}
+
+.pointer{
+    cursor: pointer;
+}
+.pointer:hover{
+     color: white;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#E8A87C;
+    color: white;
+    text-align: center;
+}
+
+.wallp{
+    width: 100%;
+}
+
+.logos{
+    width: 30%;
+    background: #EEF1F3;
+    margin-bottom: 5%;
+}
+
+.logo{
+    width: 30%;
+    margin: 0% 15% 5% 5%;
+}
+
+.tagline{
+    width:30%;
+    display: inline-block;
+    margin-left:30%; 
+}

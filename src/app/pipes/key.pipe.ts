@@ -16,7 +16,6 @@ export class KeyPipe implements PipeTransform {
       }
       i++;
     }
-    console.log(keys);
     return keys;
   }
 

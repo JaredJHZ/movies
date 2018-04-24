@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MoviesService} from '../../services/movies.service';
+import {Router} from '@angular/router';
+import { Route } from '@angular/compiler/src/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,7 +14,8 @@ export class HomeComponent implements OnInit {
   public popularMovies:any = {};
 
   constructor(
-    private _movieServices:MoviesService
+    private _movieServices:MoviesService,
+    private _router:Router
   ) {
     this.imageURL = "http://image.tmdb.org/t/p/w185/"
    }
@@ -22,9 +25,11 @@ export class HomeComponent implements OnInit {
           .subscribe(
             (moviesData)=>{
               this.popularMovies = moviesData;
-              console.log(this.popularMovies);
             }
           )
+  }
+  getInfo(id:string){
+    this._router.navigate(['movie',id]);
   }
 
 }

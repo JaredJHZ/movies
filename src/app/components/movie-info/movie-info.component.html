@@ -1,0 +1,13 @@
+<div class="container">
+    <h1 class="center">{{movie.title}}</h1>
+    <img class="wallp" [src]="(urlImage+movie.image)" alt="">
+    <p>Release date: {{movie.release }}</p>
+    <span>Critics:  </span><span class="badge badge-primary">{{movie.critic}}/10</span>
+    <p><a [href]="movie.page">MoviePage</a></p>
+    <p style="color: white">{{movie.overview}}</p>
+    <div  class="logos" style="display: inline-block;">
+        <h5 style="text-align: center;">Production companies</h5>
+        <img class="logo" *ngFor="let logo of movie.studioImage" src="{{urlLogo+logo}}" alt="">
+    </div>
+    <h3 class="tagline">{{movie.tagline}}</h3>
+</div>
