@@ -1,0 +1,16 @@
+.black{
+    color: blue;
+}
+ul {
+    list-style-type: none;
+    margin: 1;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    bottom: 2%;
+    position: fixed;
+}
+
+li {
+    float: left;
+}

@@ -15,6 +15,8 @@ import { MovieInfoComponent } from './components/movie-info/movie-info.component
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { FitPipe } from './pipes/fit.pipe';
 import { SearchComponent } from './components/search/search.component';
+import { RatedComponent } from './components/home/child/rated/rated.component';
+import { PageNumberPipe } from './pipes/page-number.pipe';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { SearchComponent } from './components/search/search.component';
     MovieInfoComponent,
     FooterComponent,
     FitPipe,
-    SearchComponent
+    SearchComponent,
+    RatedComponent,
+    PageNumberPipe
   ],
   imports: [
     BrowserModule,

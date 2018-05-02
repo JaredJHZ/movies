@@ -1,0 +1,16 @@
+ <div class="mg">
+    <h4>TOP RATED MOVIES OF ALL TIME <small>By community votes</small></h4>
+ </div>
+ <div class="card-deck">
+   <div  class="card bg-success border-success mb-3" *ngFor="let movie of movies | key:'8'">
+      <img 
+      (click)="getMovieInfo(movies[movie].id)"
+      class="card-img-top pointer" [src]="imageURL+movies[movie].poster_path" alt="">
+      <div class="card-text">
+          {{movies[movie].title}}
+      </div>
+      <div class="card-text" style="text-align: center;">
+         Votes: {{movies[movie].vote_count}}
+      </div>
+   </div>
+ </div>

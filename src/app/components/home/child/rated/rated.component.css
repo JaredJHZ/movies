@@ -1,0 +1,7 @@
+.cell{
+    display: inline-block;
+    width: 10%;
+    height: 15%;
+    margin-left:0%; 
+    text-align: center;
+}

@@ -6,6 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class KeyPipe implements PipeTransform {
 
   transform(objects: any, n:number): string[] {
+  
     let keys:any[]=[];
     let i = 0;
     for(let object in objects){

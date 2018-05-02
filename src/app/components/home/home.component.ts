@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     private _movieServices:MoviesService,
     private _router:Router
   ) {
-    this.imageURL = "http://image.tmdb.org/t/p/w185/"
+    this.imageURL = "http://image.tmdb.org/t/p/w185/";
    }
 
   ngOnInit() {

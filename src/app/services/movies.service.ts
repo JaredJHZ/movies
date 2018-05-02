@@ -27,14 +27,24 @@ private sk:string = `eb56ba367ccadc2710468e9063cef893`;
           )
    }
 
-   searchMovie(keyword:string,page:number=0){
-     let url:string = `${this.url}/search/movie?api_key=${this.sk}&language=en-US&page=${page}&include_adult=false&query=${keyword}`;
+   searchMovie(keyword:string,page:number=1){
+     let url:string = `${this.url}/search/movie?api_key=${this.sk}&language=en-US&page=${page}&include_adult=false&query=${keyword}&callback=JSONP_CALLBACK`;
      return this.jsonp.get(url)
         .map(
           (result)=>{
             return result.json();
           }
         ) 
+   }
+
+   getTopRatedMovies(){
+     let url:string = `https://api.themoviedb.org/3/discover/movie?api_key=${this.sk}&sort_by=vote_count.desc&page=1&callback=JSONP_CALLBACK`;
+     return this.jsonp.get(url)
+      .map(
+        (result)=>{
+          return result.json();
+        }
+      )
    }
 
 }
