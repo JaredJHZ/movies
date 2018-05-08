@@ -2,7 +2,7 @@
 <div class="col-md-6" style="display: inline-block;">
   <h1 class="center">Most popular movies</h1>
   <div id="carouselExampleIndicators" class=" carousel slide" data-ride="carousel" style="height: 75%; width: 35%; margin-top:5%; margin-left: 35%;" >
-      <div class="carousel-inner" style="height: 100%; width: 90%;">
+      <div class="carousel-inner" style="height: 100%; width: 100%;">
         <div class="carousel-item" *ngFor="let movie of (popularMovies | key:'5'); let i = index;" [ngClass]="{'active':i===0}">
           <img class="d-block w-100 pointer" [src]="(imageURL+popularMovies[movie].poster_path)" alt="First slide" 
           (click)="getInfo(popularMovies[movie].id)"
