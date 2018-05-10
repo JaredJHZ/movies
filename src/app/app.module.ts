@@ -17,6 +17,7 @@ import { FitPipe } from './pipes/fit.pipe';
 import { SearchComponent } from './components/search/search.component';
 import { RatedComponent } from './components/home/child/rated/rated.component';
 import { PageNumberPipe } from './pipes/page-number.pipe';
+import { KidsComponent } from './components/home/kids/kids.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { PageNumberPipe } from './pipes/page-number.pipe';
     FitPipe,
     SearchComponent,
     RatedComponent,
-    PageNumberPipe
+    PageNumberPipe,
+    KidsComponent
   ],
   imports: [
     BrowserModule,

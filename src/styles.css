@@ -60,6 +60,10 @@ body{
     margin-left:30%; 
 }
 
+.custom{
+    margin: 0;
+}
+
 /* Animaciones */
 .animated {
     -webkit-animation-duration: 1s;

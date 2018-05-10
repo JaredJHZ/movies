@@ -24,11 +24,26 @@
 
   <div class="col-md-6" >
     <h3>Top 10 movies by popularity</h3>
-    <ol style="display: inline-block; margin-top:5%" >
-      <li class="pointer" *ngFor="let movie of (popularMovies | key:'10')" (click)="getInfo(popularMovies[movie].id)">{{popularMovies[movie].title}}</li>
-    </ol>
+    <div class="card-columns custom animated fadeIn">
+      <div class="card bg-success border-success mb-3 pointer"*ngFor="let movie of (popularMovies | key:'10')" (click)="getInfo(popularMovies[movie].id)" >
+          <img [src]="(imageURL+popularMovies[movie].backdrop_path)" alt="" class="card-img">
+          <div class="card-body" style="text-align:center;">
+            {{popularMovies[movie].title}}
+          </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<div class="row"> 
+  <div class="col-md-12">
+      <div class="btn-group">
+          <button type="button" class="btn btn-secondary" [routerLink]="['main']">Rated</button>
+          <button type="button" class="btn btn-secondary" [routerLink]="['kids']">Kids</button>
+      </div>
+  </div>
+</div>
+
 <div class="row">
   <div class="col-md-12">
     <router-outlet></router-outlet>

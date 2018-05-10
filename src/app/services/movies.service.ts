@@ -46,5 +46,14 @@ private sk:string = `eb56ba367ccadc2710468e9063cef893`;
         }
       )
    }
+   getKidMovies(){
+     let url:string = `${this.url}/discover/movie?api_key=${this.sk}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=16&callback=JSONP_CALLBACK`;
+     return this.jsonp.get(url)
+      .map(
+        (result)=>{
+          return result.json();
+        }
+      )
+   }
 
 }
