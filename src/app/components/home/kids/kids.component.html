@@ -2,7 +2,7 @@
     <h4>TOP KIDS MOVIES OF ALL TIME</h4>
  </div>
  <div class="card-deck ">
-   <div  class="card bg-success border-success mb-3" *ngFor="let movie of movies | key:'8'">
+   <div  class="card custom bg-success border-success mb-3 pointer" *ngFor="let movie of movies | key:'8'">
       <img 
       (click)="getMovieInfo(movies[movie].id)"
       class="card-img-top pointer" [src]="imageURL+movies[movie].poster_path" alt="">

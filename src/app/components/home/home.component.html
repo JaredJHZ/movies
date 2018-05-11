@@ -1,14 +1,12 @@
-<div class="row justify-content-center">
+<div class="row">
 <div class="col-md-6" style="display: inline-block;">
   <h1 class="center">Most popular movies</h1>
-  <div id="carouselExampleIndicators" class=" carousel slide" data-ride="carousel" style="height: 75%; width: 35%; margin-top:5%; margin-left: 35%;" >
+  <div id="carouselExampleIndicators" class=" carousel slide" data-ride="carousel" style="height: 85%; width: 55%; margin-top:5%; margin-left: 25%;" >
       <div class="carousel-inner" style="height: 100%; width: 100%;">
         <div class="carousel-item" *ngFor="let movie of (popularMovies | key:'5'); let i = index;" [ngClass]="{'active':i===0}">
           <img class="d-block w-100 pointer" [src]="(imageURL+popularMovies[movie].poster_path)" alt="First slide" 
           (click)="getInfo(popularMovies[movie].id)"
-          
           >
-          <span class="center">{{popularMovies[movie].title | fit}}</span>
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -20,6 +18,7 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
+  
   </div>
 
   <div class="col-md-6" >
@@ -38,8 +37,8 @@
 <div class="row"> 
   <div class="col-md-12">
       <div class="btn-group">
-          <button type="button" class="btn btn-secondary" [routerLink]="['main']">Rated</button>
-          <button type="button" class="btn btn-secondary" [routerLink]="['kids']">Kids</button>
+          <button type="button" class="btn btn-secondary" [routerLink]="['main']" routerLinkActive="active">Rated</button>
+          <button type="button" class="btn btn-secondary" [routerLink]="['kids']" routerLinkActive="active">Kids</button>
       </div>
   </div>
 </div>

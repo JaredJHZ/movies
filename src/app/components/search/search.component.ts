@@ -16,8 +16,9 @@ export class SearchComponent implements OnInit {
   loading:boolean = true;
   constructor(public _moviesService:MoviesService,
     private _router:Router,
-    private _activatedRoute:ActivatedRoute) {
-    this.imageURL = "http://image.tmdb.org/t/p/w185/";
+    private _activatedRoute:ActivatedRoute
+  ) {
+    this.imageURL = "http://image.tmdb.org/t/p/w780/";
     this._activatedRoute.params.subscribe(
       (params)=>{
         
@@ -43,4 +44,14 @@ export class SearchComponent implements OnInit {
   toPage(page:number){
     this._router.navigate(['search',this.keyword,page]);
   }
+  toPageS(page, plus){
+    this._router.navigate(['search',this.keyword,parseInt(page) + parseInt(plus)]);
+  }
+  getImage(result){
+    if(result.poster_path){
+      return this.imageURL+(result.poster_path);
+    }else return "./assets/noFound.jpg"
+    
+  }
+  
 }

@@ -1,5 +1,15 @@
+
 <div class="container animated fadeIn fast">
-<<<<<<< HEAD
+<div class="row">
+        <div class="col-md-1" style="margin: 1%;">
+                        <button  
+                        (click)="return()"class="btn btn-Secondary">
+                        Return
+                </button>
+        </div>
+
+</div>
+
         <h1 class="center">{{movie.title}}</h1>
         <img class="wallp" [src]="(urlImage+movie.image)" alt="">
         <p>Release date: {{movie.release }}</p>
@@ -19,24 +29,3 @@
         </div>
         
     </div>
-=======
-    <h1 class="center">{{movie.title}}</h1>
-    <img class="wallp" [src]="(urlImage+movie.image)" alt="">
-    <p>Release date: {{movie.release }}</p>
-    <span>Critics:  </span><span class="badge badge-primary">{{movie.critic}}/10</span>
-    <p><a [href]="movie.page">MoviePage</a></p>
-    <div class="alert alert-success">
-            <p style="color: #563D7C">{{movie.overview}}</p>
-    </div>
-    <div class="alert alert-info" style="padding: 0; text-align: center;">
-          <h2> "{{movie.tagline}}" </h2> 
-    </div>
-    <div  class="card" style="display: inline-block;">
-        <div class="card-title">
-                <h5 style="text-align: center;">Production companies</h5>
-        </div>
-        <img class="logo" *ngFor="let logo of movie.studioImage" src="{{urlLogo+logo}}" alt="">
-    </div>
-    
-</div>
->>>>>>> 5dd1f9e638966d063a813437a8afbb44ae685033

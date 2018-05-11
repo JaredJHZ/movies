@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {Location} from '@angular/common';
 import {Movie} from '../../interfaces/movie.interface';
 //services
 import {MoviesService} from '../../services/movies.service';
@@ -24,7 +25,8 @@ export class MovieInfoComponent implements OnInit {
   };
   constructor(
     private _activatedRoute:ActivatedRoute,
-    public _movieService:MoviesService
+    public _movieService:MoviesService,
+    public _location:Location
   ) { 
     this._activatedRoute.params.subscribe(
       (params)=>{
@@ -55,6 +57,10 @@ export class MovieInfoComponent implements OnInit {
 
   ngOnInit() {
     
+  }
+
+  return(){
+    this._location.back();
   }
 
 }

@@ -16,7 +16,7 @@ export class RatedComponent implements OnInit {
     private _moviesService:MoviesService,
     private _router:Router
   ) { 
-    this.imageURL = "http://image.tmdb.org/t/p/w185/";
+    this.imageURL = "http://image.tmdb.org/t/p/w780/";
   }
 
   ngOnInit() {

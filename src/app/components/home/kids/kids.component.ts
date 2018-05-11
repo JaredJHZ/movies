@@ -17,7 +17,7 @@ export class KidsComponent implements OnInit {
     this._moviesServie.getKidMovies().subscribe(
       (data)=>{
         this.movies = data.results;
-        this.imageURL = "http://image.tmdb.org/t/p/w185/";
+        this.imageURL = "http://image.tmdb.org/t/p/w780/";
         console.log(this.movies);
       }
     )

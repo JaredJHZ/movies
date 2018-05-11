@@ -2,13 +2,14 @@
         Cargando...
 </div>
 <div class="container animated fadeIn " *ngIf="!loading">
+   
     <div class="row justify-content-center">
         <div class="col-md-8">
                 <div class="card-columns">
                         <div 
                         (click)="getInfo(results[movie].id)"
                         *ngFor="let movie of (results | key:'10')" class="card" style="margin-top:7%;">
-                            <img [src]="(imageURL+results[movie].poster_path)" alt="" class="card-img-top pointer">
+                            <img [src]="getImage(results[movie])" alt="" class="card-img-top pointer">
                             <div class="card-body">
                                     <div class="card-title pointer">
                                             <h1>{{results[movie].title}}</h1>
@@ -23,8 +24,12 @@
         </div>
     </div>
 </div>
-<ul class="pages" *ngIf="!loading">
-    <li class="pointer" *ngFor="let number of (results | pageNumber:nPages)" [ngClass]="{'black':page==(number+1)}"><a 
-        (click)="toPage(number+1)"
-        >{{number+1}}</a></li>
-</ul>
+<div class="row justify-content-center">
+        <nav aria-label="Page navigation" style="margin-bottom: 2%;">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item"><a class="page-link" (click)="toPage(page-1)">Previous</a></li>
+                  <li class="page-item" [ngClass]="{'active':(number+1)==page}" *ngFor="let number of (results | pageNumber:nPages)" ><a (click)="toPage(number+1)" class="page-link " >{{number+1}}</a></li>
+                  <li class="page-item"><a class="page-link" (click)="toPageS(page,1)" >Next</a></li>
+                </ul>
+              </nav>
+</div>
