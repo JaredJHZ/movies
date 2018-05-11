@@ -1,7 +1,7 @@
 <div class="row">
 <div class="col-md-6" style="display: inline-block;">
   <h1 class="center">Most popular movies</h1>
-  <div id="carouselExampleIndicators" class=" carousel slide" data-ride="carousel" style="height: 85%; width: 55%; margin-top:5%; margin-left: 25%;" >
+  <div id="carouselExampleIndicators" class=" carousel slide" data-ride="carousel" style="height: 85%; width: 55%; margin-top:5%; margin-left: 23%;" >
       <div class="carousel-inner" style="height: 100%; width: 100%;">
         <div class="carousel-item" *ngFor="let movie of (popularMovies | key:'5'); let i = index;" [ngClass]="{'active':i===0}">
           <img class="d-block w-100 pointer" [src]="(imageURL+popularMovies[movie].poster_path)" alt="First slide" 
@@ -22,12 +22,12 @@
   </div>
 
   <div class="col-md-6" >
-    <h3>Top 10 movies by popularity</h3>
+    <h3>listings</h3>
     <div class="card-columns custom animated fadeIn">
-      <div class="card bg-success border-success mb-3 pointer"*ngFor="let movie of (popularMovies | key:'10')" (click)="getInfo(popularMovies[movie].id)" >
-          <img [src]="(imageURL+popularMovies[movie].backdrop_path)" alt="" class="card-img">
+      <div class="card bg-success border-success mb-3 pointer"*ngFor="let movie of (cartelera | key:'7')" (click)="getInfo(cartelera[movie].id)" >
+          <img [src]="(imageURL+cartelera[movie].backdrop_path)" alt="" class="card-img">
           <div class="card-body" style="text-align:center;">
-            {{popularMovies[movie].title}}
+            {{cartelera[movie].title}}
           </div>
       </div>
     </div>
@@ -36,9 +36,9 @@
 
 <div class="row"> 
   <div class="col-md-12">
-      <div class="btn-group">
-          <button type="button" class="btn btn-secondary" [routerLink]="['main']" routerLinkActive="active">Rated</button>
-          <button type="button" class="btn btn-secondary" [routerLink]="['kids']" routerLinkActive="active">Kids</button>
+      <div class="btn-group" style="margin-bottom: 1%;">
+          <button type="button" class="btn btn-secondary" [routerLink]="['main']" routerLinkActive="activated">Rated</button>
+          <button type="button" class="btn btn-secondary" [routerLink]="['kids']" routerLinkActive="activated">Kids</button>
       </div>
   </div>
 </div>

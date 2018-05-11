@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   imageURL:string;
 
   public popularMovies:any = {};
+  public cartelera:any={};
 
   constructor(
     private _movieServices:MoviesService,
@@ -25,6 +26,12 @@ export class HomeComponent implements OnInit {
           .subscribe(
             (moviesData)=>{
               this.popularMovies = moviesData;
+            }
+          )
+      this._movieServices.getCartelera()
+          .subscribe(
+            (cartelera)=>{
+              this.cartelera = cartelera.results;
             }
           )
   }

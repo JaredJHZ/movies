@@ -10,13 +10,14 @@ export class KeyPipe implements PipeTransform {
     let keys:any[]=[];
     let i = 0;
     for(let object in objects){
-      if(i<n){
+      if(i<=n){
         keys.push(object);
       }else {
         break;
       }
       i++;
     }
+    
     return keys;
   }
 

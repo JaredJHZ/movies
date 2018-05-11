@@ -55,5 +55,18 @@ private sk:string = `eb56ba367ccadc2710468e9063cef893`;
         }
       )
    }
-
+   getCartelera(){
+    let desde = new Date();
+    let hasta = new Date();
+    hasta.setDate(hasta.getDate() +7);
+    let desdeSTR = `${desde.getFullYear()}-${desde.getMonth()+1}-${desde.getDay()}`;
+    let hastaSTR = `${hasta.getFullYear()}-${hasta.getMonth()+1}-${hasta.getDay()}`;
+    let url = `${this.url}/discover/movie?primary_release_date.gte=${desdeSTR}&primary_release_date=${hastaSTR}&api_key=${this.sk}&callback=JSONP_CALLBACK`;
+    return this.jsonp.get(url)
+     .map(
+       (results)=>{
+         return results.json();
+       }
+     )
+  }
 }
